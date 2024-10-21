@@ -11,11 +11,6 @@ export default function App() {
           firstName={"Martin"}
           lastName={"utzon"}
           age={30}
-          isOpenToWork={true}
-          car={{ brand: "Mustang", maxSpeed: 200 }}
-          doSomething={function () {
-            console.log("Hello");
-          }}
         ></ProfilCard>
       </SafeAreaView>
     </SafeAreaProvider>

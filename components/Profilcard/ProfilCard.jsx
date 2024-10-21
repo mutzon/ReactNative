@@ -2,21 +2,7 @@ import { TouchableOpacity, Text, View, Image } from "react-native";
 import { s } from "./Profilcard.style";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export function ProfilCard({
-  firstName,
-  lastName,
-  age,
-  isOpenToWork,
-  car,
-  doSomething,
-}) {
-  function work() {
-    if (isOpenToWork) {
-      console.log("I want to work");
-    } else {
-      console.log("I Dont want to work");
-    }
-  }
+export function ProfilCard({ firstName, lastName, age }) {
   /* console.log(props); */
   return (
     <View style={s.container}>
@@ -30,11 +16,10 @@ export function ProfilCard({
         <View style={s.texts}>
           <Text style={s.name}>
             {firstName} {lastName}
-            {work()}
           </Text>
           <Text>
             Hi I'm a react native developer, I am {age + 20} old let's get in
-            touch - that would be great. I have a {car.brand}. Jobsutuation?
+            touch - that would be great.
           </Text>
         </View>
       </View>
