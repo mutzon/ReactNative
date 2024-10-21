@@ -7,7 +7,16 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
-        <ProfilCard></ProfilCard>
+        <ProfilCard
+          firstName={"Martin"}
+          lastName={"utzon"}
+          age={30}
+          isOpenToWork={true}
+          car={{ brand: "Mustang", maxSpeed: 200 }}
+          doSomething={function () {
+            console.log("Hello");
+          }}
+        ></ProfilCard>
       </SafeAreaView>
     </SafeAreaProvider>
   );
