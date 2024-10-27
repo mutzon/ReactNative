@@ -1,19 +1,27 @@
-import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { s } from "./App.style";
 import { ProfilCard } from "./components/Profilcard/ProfilCard";
-import { AgeCounter } from "./components/AgeCounter/AgeCounter";
+import { Alert, Text } from "react-native";
+import { useState } from "react";
 
 export default function App() {
+  const [countClick, setCountClick] = useState(0);
+
+  function hello(name) {
+    Alert.alert("Hello!  " + name);
+    setCountClick(countClick + 1);
+  }
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, padding: 20 }}>
-        <AgeCounter></AgeCounter>
-        {/*         <ProfilCard
-          firstName={"Martin"}
+      <SafeAreaView style={s.container}>
+        <ProfilCard
+          onPressTitle={hello}
+          firstName={"martin"}
           lastName={"utzon"}
-          age={30}
-        ></ProfilCard> */}
+          age={39}
+        />
+
+        <Text>You clicked {countClick} times on the title</Text>
       </SafeAreaView>
     </SafeAreaProvider>
   );

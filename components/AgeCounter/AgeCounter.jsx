@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TouchableOpacity, Text } from "react-native";
 
 export function AgeCounter() {
-  const [smuk, setAge] = useState(30);
+  const [smuk, setAge] = useState(10);
 
   function increaseAge() {
     setAge(smuk + 1);

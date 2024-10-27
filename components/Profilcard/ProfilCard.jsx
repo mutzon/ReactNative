@@ -2,7 +2,10 @@ import { TouchableOpacity, Text, View, Image } from "react-native";
 import { s } from "./Profilcard.style";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export function ProfilCard({ firstName, lastName, age }) {
+export function ProfilCard({ firstName, lastName, age, onPressTitle }) {
+  function onPressTitleOutside() {
+    onPressTitle(firstName + "  " + lastName);
+  }
   /* console.log(props); */
   return (
     <View style={s.container}>
@@ -14,9 +17,11 @@ export function ProfilCard({ firstName, lastName, age }) {
           />
         </View>
         <View style={s.texts}>
-          <Text style={s.name}>
-            {firstName} {lastName}
-          </Text>
+          <TouchableOpacity onPress={onPressTitleOutside}>
+            <Text style={s.name}>
+              {firstName} {lastName}
+            </Text>
+          </TouchableOpacity>
           <Text>
             Hi I'm a react native developer, I am {age + 20} old let's get in
             touch - that would be great.
